@@ -13,6 +13,9 @@ module.exports = {
   entry: {
     index: './src/index.js',
     util: './src/util.js',
+    demo: './src/pages/demo/demo.js',
+    home: './src/pages/home/home.js',
+    sample: './src/pages/sample/sample.js',
   }, // Order affects loading order
   output: {
     // filename: 'bundle.js',
@@ -27,7 +30,19 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      filename: 'index.html',
+      template: './src/pages/home/index.html',
+      chunks: ['home']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'demo.html',
+      template: './src/pages/demo/index.html',
+      chunks: ['demo']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'sample',
+      template: './src/pages/sample/index.html',
+      chunks: ['sample']
     }),
   ],
   module: {
