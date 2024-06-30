@@ -11,14 +11,15 @@ module.exports = {
   },
   // this.entry: './src/index.js',
   entry: {
-    index: './src/index.js',
-    util: './src/util.js',
+    index: './src/pages/home/index.js',
+    // util: './src/util.js',
+    backup: './src/pages/backup/index.js'
   }, // Order affects loading order
   output: {
-    // filename: 'bundle.js',
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/assets'),
     clean: true,
+    publicPath: '/assets/',
   },
   optimization: {
     splitChunks: {
@@ -27,7 +28,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      template: './src/pages/home/index.html', // HTML 模板文件路径
+      filename: '../index.html', // 输出的 HTML 文件相对于 `output.path` 的路径
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/backup/index.html', // HTML 模板文件路径
+      filename: '../backup/index.html', // 输出的 HTML 文件相对于 `output.path` 的路径
+      chunks: ['backup'],
     }),
   ],
   module: {

@@ -1,5 +1,6 @@
-import './style.css';
-import Icon from './assets/images/icon.png';
+import '../../style.css';
+import Icon from '../../assets/images/icon.png';
+import '../../utils/util.js';
 
 function component() {
   const element = document.createElement('div');
@@ -20,3 +21,6 @@ function component() {
 document.body.appendChild(component());
 
 console.log('Hello, webpack!');
+console.log('home');
+console.log(location.pathname);
+console.log(location.pathname.split('/').filter(Boolean));
