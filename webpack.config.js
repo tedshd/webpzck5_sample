@@ -17,8 +17,9 @@ module.exports = {
   output: {
     // filename: 'bundle.js',
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/assets'),
     clean: true,
+    publicPath: '/assets/',
   },
   optimization: {
     splitChunks: {
@@ -27,7 +28,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      template: './src/index.html', // HTML 模板文件路径
+      filename: '../index.html', // 输出的 HTML 文件相对于 `output.path` 的路径
     }),
   ],
   module: {

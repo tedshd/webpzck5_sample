@@ -20,3 +20,4 @@ function component() {
 document.body.appendChild(component());
 
 console.log('Hello, webpack!');
+console.log(location.pathname);
