@@ -24,3 +24,14 @@ console.log('Hello, webpack!');
 console.log('home');
 console.log(location.pathname);
 console.log(location.pathname.split('/').filter(Boolean));
+
+const profile = location.pathname.split('/').filter(Boolean);
+
+if (profile.length > 0) {
+  console.log(profile[0]);
+  if (profile[0] === 'tedshd') {
+    // document.body.style.backgroundColor = 'lightblue';
+    const root = document.querySelector(':root');
+    root.style.setProperty('--dark-color', '#0088ff');
+  }
+}
