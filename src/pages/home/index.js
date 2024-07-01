@@ -1,4 +1,5 @@
 import '../../style.css';
+import './style.scss';
 import Icon from '../../assets/images/icon.png';
 import '../../utils/util.js';
 
