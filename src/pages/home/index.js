@@ -36,3 +36,5 @@ if (profile.length > 0) {
     root.style.setProperty('--dark-color', '#0088ff');
   }
 }
+
+console.log('env:', process.env.NODE_ENV);
