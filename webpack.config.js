@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -27,6 +28,7 @@ module.exports = {
     },
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: './src/pages/home/index.html', // HTML 模板文件路径
       filename: '../index.html', // 输出的 HTML 文件相对于 `output.path` 的路径

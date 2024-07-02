@@ -22,7 +22,6 @@ function component() {
 document.body.appendChild(component());
 
 console.log('Hello, webpack!');
-console.log('home');
 console.log(location.pathname);
 console.log(location.pathname.split('/').filter(Boolean));
 
@@ -38,3 +37,4 @@ if (profile.length > 0) {
 }
 
 console.log('env:', process.env.NODE_ENV);
+console.log('env:', process.env.API_HOST);
